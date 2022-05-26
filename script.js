@@ -32,4 +32,7 @@ function operate(num1,num2,operator) {
     }
 }
 
-alert(operate(1,2,"/"));
+let result = operate(2,2,"/");
+
+const display = document.getElementById("display");
+display.textContent = result;
