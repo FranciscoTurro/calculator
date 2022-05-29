@@ -55,8 +55,7 @@ function allClear() {
 }
 
 function equal(){
-  const splitter = (displaySmall.textContent + displayBig.textContent).split('');
-  alert(operate(splitter[0],splitter[2],splitter[1]))
+  const splitter = (displaySmall.textContent + displayBig.textContent).split(''); //The split gives me "2,2,+,3,3" when i need 22,+,33
 }
 
 clearButton.addEventListener("click",()=>{
