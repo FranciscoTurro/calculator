@@ -1,5 +1,5 @@
 function add(num1, num2) {
-  return parseInt(num1) + parseInt(num2);
+  return num1 + num2;
 }
 
 function subtract(num1, num2) {
@@ -28,30 +28,44 @@ function operate(num1, num2, operator) {
   }
 }
 
-const numButtons = document.querySelectorAll(".num");
-numButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    display.textContent = button.id;
-    secDis.textContent += button.id;
-  });
-});
+const numButtons = document.querySelectorAll("[data-number]");
+const operatorButtons = document.querySelectorAll("[data-operator]");
+const equalButton = document.querySelector("[data-equals]");
+const clearButton = document.querySelector("[data-clear]");
+const displaySmall = document.querySelector("[data-displaySmall]");
+const displayBig = document.querySelector("[data-displayBig]");
 
-const operators = document.querySelectorAll(".operator");
-operators.forEach((button) => {
-  button.addEventListener("click", () => {
-    secDis.textContent += button.id;
-  });
-});
+function addNumber(num) {
+  displayBig.textContent += num //SE SUMAN STRINGS (2+3 = 23, NO 2+3=5)
+}
 
-const clear = document.querySelector(".clear");
-clear.addEventListener("click", () => {
-  display.textContent = "";
-  secDis.textContent = "";
-});
+function addOperand(operand) {
+  displaySmall.textContent = displayBig.textContent;
+  displayBig.textContent = "";
+  displaySmall.textContent += operand;
+}
 
-const equal = document.querySelector(".equal");
-equal.addEventListener("click", () => {});
+function allClear() {
+  displayBig.textContent = "";
+  displaySmall.textContent = "";
+}
 
-const display = document.getElementById("display");
+function equal(){
+  
+}
 
-const secDis = document.getElementById("secondary-display");
+clearButton.addEventListener("click",()=>{
+  allClear();
+})
+
+numButtons.forEach(button=> {
+  button.addEventListener("click",()=>{
+    addNumber(button.textContent) //EL TEXT CONTENT ES UN STRING, ASI QUE ESTOY PASANDO ESO A LAS FUNCIONES
+  })
+})
+
+operatorButtons.forEach(button=> {
+  button.addEventListener("click",()=>{
+    addOperand(button.textContent);
+  })
+})
