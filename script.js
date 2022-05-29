@@ -1,17 +1,17 @@
 function add(num1, num2) {
-  return num1 + num2;
+  return parseInt(num1) + parseInt(num2);
 }
 
 function subtract(num1, num2) {
-  return num1 - num2;
+  return parseInt(num1) - parseInt(num2);
 }
 
 function multiply(num1, num2) {
-  return num1 * num2;
+  return parseInt(num1) * parseInt(num2);
 }
 
 function divide(num1, num2) {
-  return num1 / num2;
+  return parseInt(num1) / parseInt(num2);
 }
 
 function operate(num1, num2, operator) {
@@ -39,7 +39,11 @@ function addNumber(num) {
   displayBig.textContent += num //SE SUMAN STRINGS (2+3 = 23, NO 2+3=5)
 }
 
-function addOperand(operand) {
+function chooseOperand(operand) {
+  if (displayBig.textContent == "") return
+  if (displaySmall.textContent !== "") {
+    equal();
+  }
   displaySmall.textContent = displayBig.textContent;
   displayBig.textContent = "";
   displaySmall.textContent += operand;
@@ -51,7 +55,8 @@ function allClear() {
 }
 
 function equal(){
-  
+  const splitter = (displaySmall.textContent + displayBig.textContent).split('');
+  alert(operate(splitter[0],splitter[2],splitter[1]))
 }
 
 clearButton.addEventListener("click",()=>{
@@ -66,6 +71,10 @@ numButtons.forEach(button=> {
 
 operatorButtons.forEach(button=> {
   button.addEventListener("click",()=>{
-    addOperand(button.textContent);
+    chooseOperand(button.textContent);
   })
+})
+
+equalButton.addEventListener("click",()=>{
+  equal()
 })
