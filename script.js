@@ -60,9 +60,18 @@ function chooseOperand(operand) {
 function allClear() {
   displayBig.textContent = "";
   displaySmall.textContent = "";
+  result1 = 0;
+  result2 = 0;
+  symbol = null;
 }
 
 function equal() {
+  if (result1 == null || result2 == null || symbol == null) return
+  if (result1 == 0 && symbol == "/") {
+    alert("piss off pipsqueak, no dividing by 0 round these parts");
+    allClear();
+    return;
+  }
   displayBig.textContent = operate(result2, result1, symbol);
   result1 = displayBig.textContent;
   displaySmall.textContent = "";
