@@ -28,6 +28,10 @@ function operate(num1, num2, operator) {
   }
 }
 
+let result1;
+let result2;
+let symbol;
+
 const numButtons = document.querySelectorAll("[data-number]");
 const operatorButtons = document.querySelectorAll("[data-operator]");
 const equalButton = document.querySelector("[data-equals]");
@@ -37,6 +41,7 @@ const displayBig = document.querySelector("[data-displayBig]");
 
 function addNumber(num) {
   displayBig.textContent += num //SE SUMAN STRINGS (2+3 = 23, NO 2+3=5)
+  result1 = num
 }
 
 function chooseOperand(operand) {
@@ -45,7 +50,10 @@ function chooseOperand(operand) {
     equal();
   }
   displaySmall.textContent = displayBig.textContent;
+  symbol = operand
+  result2 = result1;
   displayBig.textContent = "";
+  result1 = displaySmall.textContent;
   displaySmall.textContent += operand;
 }
 
@@ -55,7 +63,9 @@ function allClear() {
 }
 
 function equal(){
-  const splitter = (displaySmall.textContent + displayBig.textContent).split(''); //The split gives me "2,2,+,3,3" when i need 22,+,33
+  displayBig.textContent = operate(result2,result1,symbol);
+  result1 = displayBig.textContent
+  displaySmall.textContent = "";
 }
 
 clearButton.addEventListener("click",()=>{
