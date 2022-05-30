@@ -113,3 +113,24 @@ backspaceKey.addEventListener("click",()=>{
   backspace();
 })
 
+document.addEventListener("keydown",(e)=>{
+  if (!isNaN(e.key)) {
+    addNumber(e.key);
+  }
+  if (e.key == "+" || e.key == "-" || e.key == "/" || e.key == "*" || e.key == "=") {
+    chooseOperand(e.key);
+  }
+  if (e.key === 'Enter') {
+    equal();
+  }
+  if (e.key === 'Backspace'){
+    backspace();
+  }
+  if (e.key == '.'){
+    addNumber(".")
+  }
+  if (e.key == "c") {
+    allClear();
+  }
+})
+
