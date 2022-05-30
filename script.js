@@ -117,7 +117,7 @@ document.addEventListener("keydown",(e)=>{
   if (!isNaN(e.key)) {
     addNumber(e.key);
   }
-  if (e.key == "+" || e.key == "-" || e.key == "/" || e.key == "*" || e.key == "=") {
+  if (e.key == "+" || e.key == "-" || e.key == "/" || e.key == "*") {
     chooseOperand(e.key);
   }
   if (e.key === 'Enter' || e.key == "=") {
