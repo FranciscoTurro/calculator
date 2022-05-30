@@ -40,17 +40,17 @@ const displaySmall = document.querySelector("[data-displaySmall]");
 const displayBig = document.querySelector("[data-displayBig]");
 
 function addNumber(num) {
-  displayBig.textContent += num //SE SUMAN STRINGS (2+3 = 23, NO 2+3=5)
-  result1 = num
+  displayBig.textContent += num; //SE SUMAN STRINGS (2+3 = 23, NO 2+3=5)
+  result1 = displayBig.textContent;
 }
 
 function chooseOperand(operand) {
-  if (displayBig.textContent == "") return
+  if (displayBig.textContent == "") return;
   if (displaySmall.textContent !== "") {
     equal();
   }
   displaySmall.textContent = displayBig.textContent;
-  symbol = operand
+  symbol = operand;
   result2 = result1;
   displayBig.textContent = "";
   result1 = displaySmall.textContent;
@@ -62,28 +62,28 @@ function allClear() {
   displaySmall.textContent = "";
 }
 
-function equal(){
-  displayBig.textContent = operate(result2,result1,symbol);
-  result1 = displayBig.textContent
+function equal() {
+  displayBig.textContent = operate(result2, result1, symbol);
+  result1 = displayBig.textContent;
   displaySmall.textContent = "";
 }
 
-clearButton.addEventListener("click",()=>{
+clearButton.addEventListener("click", () => {
   allClear();
-})
+});
 
-numButtons.forEach(button=> {
-  button.addEventListener("click",()=>{
-    addNumber(button.textContent) //EL TEXT CONTENT ES UN STRING, ASI QUE ESTOY PASANDO ESO A LAS FUNCIONES
-  })
-})
+numButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    addNumber(button.textContent); //EL TEXT CONTENT ES UN STRING, ASI QUE ESTOY PASANDO ESO A LAS FUNCIONES
+  });
+});
 
-operatorButtons.forEach(button=> {
-  button.addEventListener("click",()=>{
+operatorButtons.forEach((button) => {
+  button.addEventListener("click", () => {
     chooseOperand(button.textContent);
-  })
-})
+  });
+});
 
-equalButton.addEventListener("click",()=>{
-  equal()
-})
+equalButton.addEventListener("click", () => {
+  equal();
+});
