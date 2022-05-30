@@ -39,6 +39,7 @@ const clearButton = document.querySelector("[data-clear]");
 const displaySmall = document.querySelector("[data-displaySmall]");
 const displayBig = document.querySelector("[data-displayBig]");
 const point = document.querySelector("[data-point]");
+const backspaceKey = document.querySelector("[data-backspace]");
 
 function addNumber(num) {
   if (num === "." && displayBig.textContent.includes(".")) return
@@ -65,6 +66,11 @@ function allClear() {
   result1 = 0;
   result2 = 0;
   symbol = null;
+}
+
+function backspace() {
+  displayBig.textContent = displayBig.textContent.slice(0,-1);
+  result1 = displayBig.textContent;
 }
 
 function equal() {
@@ -101,5 +107,9 @@ equalButton.addEventListener("click", () => {
 
 point.addEventListener("click",()=>{
   addNumber(point.textContent);
+})
+
+backspaceKey.addEventListener("click",()=>{
+  backspace();
 })
 
