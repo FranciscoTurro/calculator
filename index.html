@@ -9,28 +9,33 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="flexHelp">
+    <div class="calcContainer">
       <div id="calc">
-        <div class="display" data-displaySmall></div>
-        <div class="display" data-displayBig></div>
+        <div class="display" id="small" data-displaySmall></div>
+        <div class="display" id="big" data-displayBig></div>
+        <button class="size-two" data-clear>AC</button>
+        <button class="size-two" data-backspace>DEL</button>
+        <br />
         <button data-number="1">1</button>
         <button data-number="2">2</button>
         <button data-number="3">3</button>
+        <button data-operator>+</button>
+        <br />
         <button data-number="4">4</button>
         <button data-number="5">5</button>
         <button data-number="6">6</button>
+        <button data-operator>-</button>
+        <br />
         <button data-number="7">7</button>
         <button data-number="8">8</button>
         <button data-number="9">9</button>
-        <button data-number="0">0</button>
-        <button data-operator>+</button>
-        <button data-operator>-</button>
         <button data-operator>*</button>
-        <button data-operator>/</button>
+        <br />
+        <button data-number="0">0</button>
         <button data-point>.</button>
         <button data-equals>=</button>
-        <button data-clear>C</button>
-        <button data-backspace>←</button>
+        <button data-operator>/</button>
+        <br />
       </div>
     </div>
   </body>

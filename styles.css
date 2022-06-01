@@ -1,5 +1,50 @@
-.flexHelp {
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+  font-family: Roboto,sans-serif;
+  font-weight: normal;
+  /* outline: 2px solid red; */
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background:linear-gradient(to right,#FF10F0,#1F51FF)
+}
+
+.calcContainer {
   display: flex;
   justify-content: center;
-  margin-top: 250px;
+  margin-top: 15em;
+}
+
+button {
+  cursor: pointer;
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  margin: 1px;
+  outline: none;
+  background-color: white;
+}
+
+.display {
+  background-color: rgba(0, 0, 0, .75);
+  text-align: end;
+  min-height: 50px;
+  padding: 10px;
+}
+
+.size-two {
+  width: 125px; /*124px because each button takes 60px width (so 120px each button), but there is a margin of .5 px, so those pixels need to be taken into account to make each button take exactly the space of 2 buttons*/
+  height: 60px;
+}
+
+#big {
+  font-size: 2.5rem;
+  color: white;
+}
+
+#small {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, .50);
 }

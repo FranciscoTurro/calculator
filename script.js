@@ -76,7 +76,7 @@ function backspace() {
 function equal() {
   if (result1 == null || result2 == null || symbol == null) return
   if (result1 == 0 && symbol == "/") {
-    alert("piss off pipsqueak, no dividing by 0 round these parts");
+    alert("Can't divide by 0, pencilneck");
     allClear();
     return;
   }
